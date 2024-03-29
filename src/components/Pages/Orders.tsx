@@ -1,4 +1,3 @@
-import React from "react";
 import { CustomError } from "../../types/api_types";
 import toast from "react-hot-toast";
 import { useMyOrdersQuery } from "../../redux/api/orderAPI";
