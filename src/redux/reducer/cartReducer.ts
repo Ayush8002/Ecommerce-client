@@ -34,7 +34,7 @@ export const cartReducer = createSlice({
   reducers: {
     totalCartItems: (state, action) => {
       const cart = action?.payload;
-      const updateCartValue = cart?.length
+      const updateCartValue = cart?.length;
       state.totalCart = updateCartValue;
     },
     calculatePrice: (state, action) => {
@@ -56,6 +56,7 @@ export const cartReducer = createSlice({
     saveShippingInfo: (state, action: PayloadAction<ShippingInfo>) => {
       const data = action.payload;
       localStorage.setItem("shippingInfo", JSON.stringify(data));
+      state.shippingInfo = action.payload;
     },
     resetCart: () => initialState,
   },
@@ -66,5 +67,5 @@ export const {
   calculatePrice,
   discountApplied,
   saveShippingInfo,
-  resetCart
+  resetCart,
 } = cartReducer.actions;
